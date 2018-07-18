@@ -23,6 +23,11 @@ func readFloat(msg, errMsg string) float64 {
 	}
 }
 
+// Hello, this is another function
+func dumbWrap(text, tag string) string {
+	return fmt.Sprintf("<%v>%v</%v>", tag, text, tag)
+}
+
 // And so do I, but still need to be... coded
 func quadratic(a, b, c float64) {}
 
