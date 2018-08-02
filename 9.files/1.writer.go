@@ -11,7 +11,6 @@ func main() {
 		fmt.Println("Could not open the file sample.dat in write mode")
 	} else {
 		file.Write([]byte("Lorem ipsum dolor sit amet consectetur adipiscing elit."))
-		file.Sync()
 		file.Close()
 		fmt.Println("Done!")
 	}
