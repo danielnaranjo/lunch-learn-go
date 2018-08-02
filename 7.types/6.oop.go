@@ -54,5 +54,10 @@ func main() {
 	DumpDebug(&sized)
 	wrObj := WindRoseObject{pos, sized}
 	DumpDebug(&wrObj)
-	fmt.Printf("Area: %v", wrObj.GetArea())
+	// Example of assigning bound methods (remember: the syntactic sugar allows us to not &pointerize our wrObject)
+	areaMethod := wrObj.GetArea
+	fmt.Printf("Area: %v\n", areaMethod())
+	// Example of assigning unbound methods (however: the syntactic sugar does not exist in the unbound case)
+	anotherAreaMethod := (*WindRoseObject).GetArea
+	fmt.Printf("Area: %v\n", anotherAreaMethod(&wrObj))
 }
